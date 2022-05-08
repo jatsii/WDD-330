@@ -4,25 +4,53 @@
         <title> WDD 330 </title>
     </head>
 <body>
-<h1>Week 03 Notes</h1>
+<h1>Week 03 Excercises</h1>
 
-<p> </p>
+<h3>1. Size of an object</h3>
+<p> 
+Object:
+<br>
+var student =  { 
+       name: 'David Rayy', 
+       sclass: "VI", 
+       rollno : 12  
+    };
+ <br>  
+Size:
+</p>
+<p id="size"> </p>
+
+<br>
+
+<h3>2. Delete an element of the object</h3>
+<p id="delete"> </p>
 
 <script>
 
-    var student =  { 
-        name : "David Rayy", 
-        sclass : "VI", 
-        rollno : 12  
+// Get the size of an object
+Object.size = function(obj) {
+  var size = 0,
+    key;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
+  return size;
+};
+
+   var student =  { 
+       name: 'David Rayy', 
+       sclass: "VI", 
+       rollno : 12  
     };
 
-    const propOwn = Object.getOwnPropertyNames(student);
-    console.log(propOwn.length);
+var size = Object.size(student);
+document.getElementById("size").innerHTML = size.toString();
 
-    console.log(student);
-    delete student.rollno;
-    console.log(student);
-
+//Delate a property of the object  
+console.log(student);
+delete student.rollno;
+console.log(student);
+document.getElementById("delete").innerHTML = JSON.stringify(student);
 </script>
 
 </body>
