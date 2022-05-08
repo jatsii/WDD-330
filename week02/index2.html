@@ -6,26 +6,34 @@
 <body>
 <h1>Week 02 Exercises: Functions</h1>
 
-<h3>Minimum</h3>
-<p> 
-Object:
 <br>
-var student =  { 
-       name: 'David Rayy', 
-       sclass: "VI", 
-       rollno : 12  
-    };
- <br>  
-Size:
-</p>
-<p id="size"> </p>
+
+<h3>Find minimum</h3>
+<p> Find minimum between 0 and 10</p>
+<p id="minOne"></p>
+<p> Find minimum between 0 and -10</p>
+<p id="minTwo"></p>
 
 <br>
 
-<h3>Delete an element of the object</h3>
-<p id="delete"> </p>
+<h3> Recursion: Is Even</h3>
+<p>Is 50 even?</p>
+<p id = "evenOne"></p>
+<p>Is 75 even?</p>
+<p id = "evenTwo"></p>
+<p>Is -1 even?</p>
+<p id = "evenThree"></p>
+
+<br>
+
+<h3> Bean Counting</h3>
+<p>How many "B"s in "BBC?</p>
+<p id="countB"></p>
+<p>How many "k"s in "kakkerlak"?</p>
+<p id="countChs"></p>
 
 <script>
+
 //Minimum
 function min(a, b)
 {
@@ -39,10 +47,14 @@ function min(a, b)
     }
 }
 
+let minOne = min(0, 10)
 console.log(min(0, 10));
-//0
+document.getElementById("minOne").innerHTML = minOne.toString();
+
+let minTwo = min(0, -10)
 console.log(min(0, -10));
-//-10
+document.getElementById("minTwo").innerHTML = minOne.toString();
+
 
 // Recursion
 function isEven(num)
@@ -61,12 +73,19 @@ function isEven(num)
     return false;
      }
 }
+
+var evenNum = isEven(50);
 console.log(isEven(50));
-// → true
+document.getElementById("evenOne").innerHTML = evenNum.toString;
+
+evenNum = isEven(75);
 console.log(isEven(75));
-// → false
+document.getElementById("evenTwo").innerHTML = evenNum.toString;
+
+evenNum = isEven(-1);
 console.log(isEven(-1));
-// → ??
+document.getElementById("evenThree").innerHTML = evenNum.toString;
+
 
 //Bean counting
 function countBs(array)
@@ -98,10 +117,15 @@ function countChar(array, ch)
 
     return countCh;
 }
+var numB= countBs("BBC");
 console.log(countBs("BBC"));
-// → 2
+document.getElementById("countBs").innerHTML = numB.toString;
+
+
+var numCh= countChar("kakkerlak", "k");
 console.log(countChar("kakkerlak", "k"));
-// → 4
+document.getElementById("countChs").innerHTML = numCh.toString;
+
 </script>
 
 </body>
