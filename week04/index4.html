@@ -18,12 +18,13 @@
 <form name='search' action='/search'>
     <input name='searchInput'>
     <button type='submit'>Search</button>
-    </form>
+</form>
 
 
-    <script>
-        const input = form.elements.searchInput;
-        input.addEventListener('blur', () => alert('blurred'), false);
-    </script>
+<script>
+     const input = form.elements.searchInput;
+    input.addEventListener('focus', () => alert('focused'), false);
+</script>
+
 </body>
 </html>
