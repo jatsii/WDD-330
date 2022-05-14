@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> WDD 330 </title>
+    </head>
+<body>
+<h1>Week 04 Notes</h1>
+
+<h2> Forms </h2>
+<h3> Reset Buttons </h3>
+<p> Reset buttons are generally considered poor for usability, as they are too easy to
+    click and then wipe out all the data that’s been entered. So think very carefully
+    before using one in a form.</p>
+    <p> Question: Why we need to be careful using the reset button in a form?</p>
+</p>
+
+<h3>Book example Form</h3>
+<form name='search' action='/search'>
+    <input name='searchInput'>
+    <button type='submit'>Search</button>
+    </form>
+
+
+    <script>
+        const input = form.elements.searchInput;
+input.addEventListener('focus', () => alert('focused'), false);
+    </script>
+</body>
+</html>
