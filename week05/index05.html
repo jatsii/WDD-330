@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> To Do </title>
+        <style>
+    
+            body{
+                border-style: groove;
+                margin: 15px 300px 25px 100px;
+                padding: 10px;
+                background-color: aquamarine;
+            }
+        
+            form{
+                border-style: groove;
+                margin: auto;
+                background-color: aqua;
+        
+            }
+
+            .formFooter{
+                border-top: groove;
+                margin: auto;
+                padding: 20px;
+                background-color: aqua;
+        
+            
+            }
+        
+            .todoFooter{
+                margin:auto;
+                padding: 5px;
+            }
+
+    
+        
+            h1{
+                text-align: center;
+            }
+        
+            ul{
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+                font-size: 25px;
+            }
+        
+        
+            input[type=checkbox] {
+                float: left;
+                margin: 3px;
+                width: 20px;
+                height: 20px;
+            }
+        
+            input[type=submit] {
+                float: right;
+                margin: 5px;
+                width: auto;
+                border:0px;
+            }
+            
+            .total{
+                float: left;
+                margin-top: -10px;
+        
+            }
+        
+        
+            .buttonsForm{
+                display: inline-block;
+                float: right;
+                margin-top: -10px;   
+            }
+        
+            #fname{
+                margin: 0 auto;
+            }
+    
+    
+        </style>
+    </head>
+
+    <body>
+    
+        <h1>Todos</h1>
+    
+        <form>
+            <ul>
+                  <li>
+                    <input type="checkbox" id="complete" name="ToDo" value="task">
+                    <label for="task1" class="task1"> </label>
+                    To do task 
+                    <input id="remove" type="submit"value="X">
+                </li>
+                <li>
+                    <input type="checkbox" id="complete" name="ToDo" value="task">
+                      <label for="task1" class="task1"> </label> 
+                    To do task 
+                    <input id="remove" type="submit"value="X">
+                </li>
+                <li>
+                    <input type="checkbox" id="complete" name="ToDo" value="task">
+                      <label for="task1" class="task1"> </label>
+                    To do task 
+                    <input id="remove" type="submit"value="X">
+                </li>
+            </ul>
+      
+            <footer class="formFooter">
+     
+                <label for="totalActive" class="total">3 left </label>
+                <div class="buttonsForm">
+                    <button type="button" class="all">All</button>
+                    <button type="button" class="active">Active</button> 
+                    <button type="button" class="completed">Completed</button> 
+                </div>
+            </footer>
+        </form>
+    
+        <br>
+    
+        <footer class="todoFooter">
+            <input type="text" id="fname" name="fname" size="25">
+            <input id="add" type="submit" value="+">   
+        </footer>
+    
+    </body>
+</html>
+    
