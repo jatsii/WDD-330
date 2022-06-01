@@ -1,12 +1,18 @@
-function getTodoList()
+function readFromLS(key)
 {
+   
+    localStorage.setItem('Task', JSON.stringify( key ) );
 
 
 }
 
-function saveTodo(todo)
+function writeToLS(key, data)
 {
+    let todoArray = [{
+        'todoKey': 'key',
+        'todoData': 'data'
 
+    }]
 
 }
 
