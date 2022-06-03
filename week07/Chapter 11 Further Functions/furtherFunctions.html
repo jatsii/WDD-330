@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Notes Week 07 </title>
+    
+    </head>
+    <body>
+        <h1>Notes Week 07</h1>
+        <br>
+        <h2>Exercise 5.1: Flatering</h2>
+        <br>
+        <p>Console Output:  [1, 2, 3, 4, 5, 6]</p>
+        <br>
+        <h2>Exercise 5.2: Your own loop</h2>
+        <br>
+        <p>Console Output:  // → 3
+                            // → 2
+                            // → 1 </p>
+        
+<script>
+    //Exercise 5.1
+       let arrays = [[1, 2, 3], [4, 5], [6]];
+
+        console.log(arrays.reduce((flat, current) => flat.concat(current), []));
+
+    //Exercise 5.2
+    function loop(start, test, update, body) {
+        for (let value = start; test(value); value = update(value)) {
+        body(value);
+        }
+    }
+
+loop(3, n => n > 0, n => n - 1, console.log);
+
+</script>
+     
+
+
+    </body>
+</html>
