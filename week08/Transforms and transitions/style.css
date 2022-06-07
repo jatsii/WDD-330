@@ -1,0 +1,10 @@
+.ad-ad2 h1:hover span {
+    color: #484848;  
+    transform: translateX(40px);
+}
+
+.ad-ad2 h1 span {
+    font-size: 30px;
+    color: #999999;
+    display: inline-block;
+}
