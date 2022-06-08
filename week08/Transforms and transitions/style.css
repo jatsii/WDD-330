@@ -1,10 +1,69 @@
 h2:hover span {
-    color: #484848;  
-    transform: translateX(40px);
+    color: #484848;
+    transform: rotate(10deg) translateX(40px) scale(1.5);
+    -webkit-transform: rotate(10deg) translateX(40px) scale(1.5);
+    -moz-transform: rotate(10deg) translateX(40px) scale(1.5);
+    -ms-transform: rotate(10deg) translateX(40px) scale(1.5);
+    -o-transform: rotate(10deg) translateX(40px) scale(1.5);
+    transition-duration: 0.2s;
 }
 
-h2 span {
+ h2 span {
     font-size: 30px;
     color: #999999;
     display: inline-block;
+}
+
+h3:hover span {
+    color: #484848;
+    transform: skew(15deg, 4deg);
+    -webkit-transform: skew(15deg, 4deg);
+    -moz-transform: skew(15deg, 4deg);
+    -ms-transform: skew(15deg, 4deg);
+    -o-transform: skew(15deg, 4deg);
+   
+    transition: transform 0.5s ease-out 50ms;
+    -webkit-transition: transform 0.5s ease-out 50ms;
+    -moz-transition: transform 0.5s ease-out 50ms;
+    -ms-transition: transform 0.5s ease-out 50ms;
+    -o-transition: transform 0.5s ease-out 50ms;
+}
+
+ h3 span {
+    font-size: 30px;
+    color: #999999;
+    display: inline-block;
+}
+
+@keyframes dua {
+    0% {
+    background-position: 0 0;
+    }
+    100% {
+    background-position: -360px 0;
+    }
+}
+@keyframes move {
+    0% {
+    transform: translateX(-100px);
+    }
+    100% {
+    transform: translateX(100px);
+    }
+}  
+    
+h4:after {
+    content: '';
+    width: 641px;
+    height: 407px;
+    background-image: url(duaLipa.jpg);
+    display: block;
+    margin: auto;
+    animation: 
+        0.1s steps(1, end) infinite 50ms dua,
+        8s linear infinite 50ms move;
+    animation-play-state: paused;
+}
+h4:hover:after {
+    animation-play-state: running;
 }
