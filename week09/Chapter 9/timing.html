@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Week 09</title>
+       
+    </head>
+<body>
+    <h1>Timing Notes</h1>
+    <br>
+    <p>The window object provides some useful methods for scheduling the execution of a function,
+         and for repeatedly executing functions at regular intervals. </p>
+
+    <h2>window.setTimeout() method</h2>
+
+    <p> The window.setTimeout() method accepts a callback to a function as its first parameter
+        and a number of milliseconds as its second parameter. Try entering the following example into a console.
+        It should show an alert dialog after three seconds (that’s 3000 milliseconds):</p>
+
+        <img src="timing01.png">
+        <p>The method returns an integer (171). This is an ID used to reference that particular timeout </p>
+        <br>
+        <p> Calling the method again and again the number that is returned is changed:</p>
+        <img src="timing02.png">
+        <br>
+        <p> It can also cancel the timeout using the window.clearTimeout() method:</p>
+        <img src="timing03.png">
+        <p>We can observe that after calling clearTimeout() method it is set as undefined.</p>
+
+
+
+</body>
+</html>

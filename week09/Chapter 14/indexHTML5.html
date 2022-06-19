@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Week 09</title>
+       
+    </head>
+<body>
+    <h1>HTML5 APis Notes</h1>
+    <br>
+    <h2>Web workers with a Factors example</h2>
+    <p>Create a function that found the factor of a given number. <br>
+        It take a long time to find the factors of a large number</p>
+    <p>This web page has a button that will change the background of the page</p>
+    <p> it’s impossible to click on the 'Change Color' button while the factors are being calculated
+        ― the whole program freezes until the operation is complete: </p>
+        <img src="factors/imgFactors/factor01.png">
+
+        <p>We start by preventing the form from being submitted, then display a message that says 'This could take a while ...'.
+             This message is displayed until the worker returns a result. To do that we add a new web worker. </p>
+             <p>When the number has been factorized, the worker will send a message back to say it has finished.</p>
+             <p>Now if we test the code, it will still take a long time to factorize a long number, but the page will not freeze.
+                  You can also continue to change the background color while the factors are being calculated in the background:</p>
+                  <img src="factors/imgFactors/factor02.png">
+                  <img src="factors/imgFactors/factor03.png">
+                  <img src="factors/imgFactors/factor04.png">
+                  <img src="factors/imgFactors/factor05.png">
+                  <img src="factors/imgFactors/factor06.png">
+                  <p>If you want to try it <a href="factors/factors.html"> Click here </a></p>
+
+    <H1>Web Sockets</H1>
+    <p>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. 
+        This means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.</p>
+      <p>Trying to do the example of the book, I found some problems tat I cannot solved. I research the issues but I was
+        not able to make it work.</p>
+    <p> This is the image of how it is supposed to look like</p>
+        <img src="Websockets/imgWebSocket/ch14websocket.png">
+     <p>Here are screenshots of how looks like and the issues: </p>
+     <img src="Websockets/imgWebSocket/webSocketFail.png">
+
+     <p>If you want to try it <a href="Websockets/websocket.html"> Click here </a></p>
+
+     <h1>Notifications</h1>
+     <p>The Notification API allows you to show messages using the system's notifications. 
+        This is usually a popup in the corner of the screen, but it changes depending on the operating system. 
+        An advantage of using the system notification is that they will still be displayed even if the web page that calls them isn't the current tab.</p>
+        <p>In the following picture we see how a notification is displayed:</p>
+        <img src="notification1.png">
+        <p>In the the following picture the function is supose to produce a system notification with the title 'Hello JavaScript!'.</p>
+        <p>The issue I found is that the state is pending:</p>
+        <img src="notification2.png">
+
+
+</body>
+</html>
