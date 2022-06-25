@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Week 10 Notes</title>
+        <style>
+    
+        </style>
+    </head>
+
+    <body>
+        <h1>Validating Forms Notes</h1>
+        <p>This is called form validation. When you enter data, the browser and/or the web server will check to see
+            that the data is in the correct format and within the constraints set by the application.
+            Validation done in the browser is called client-side validation, while validation done on the server
+            is called server-side validation.</p>
+        <p>So why do we insist on validating our forms? There are three main reasons:</p>
+        <ul>
+            <li>We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.</li>
+            <li>We want to protect our users' data. Forcing our users to enter secure passwords makes it easier to protect their account information.</li>
+            <li>We want to protect ourselves. There are many ways that malicious users can misuse unprotected forms to damage the application </li>
+        </ul>
+
+        <h2>Different types of client-side validation</h2>  
+
+        <h3>Built-in form validation</h3>
+        <p>uses HTML5 form validation features, which we've discussed in many places throughout this module. This validation generally doesn't require much JavaScript. Built-in form validation has
+            better performance than JavaScript, but it is not as customizable as JavaScript validation.</p>
+        <p>Here are 2 examples: </p>
+        <ul>
+            <li><a href="Built-in Form/fruit-start.html"> Simple validation (Required pattern) </a> </li>
+            <li><a href="Built-in Form/fruit-start-length.html"> Validation (Required length and pattern) </a></li>
+        </ul>
+            
+
+        <h3>Validating forms using JavaScript</h3>
+        <p>You must use JavaScript if you want to take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation.</p>
+        <h4>The constraint validation API</h4>
+        <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+
+        <ul>
+            <li>HTMLButtonElement (represents a button element)</li>
+            <li>HTMLFieldSetElement (represents a fieldset element)</li>
+            <li>HTMLInputElement (represents an input element)</li>
+            <li>HTMLOutputElement (represents an output element)</li>
+            <li>HTMLSelectElement (represents a select element)</li>
+            <li>HTMLTextAreaElement (represents a textarea element)</li>
+            </ul>
+
+        <p>The Constraint validation API makes the following properties available on the above elements.</p>
+            <ul>
+                <li>validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string.</li>
+                <li>validity: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the ValidityState reference page;
+                    below is listed a few of the more common ones:
+                    <ul>
+                        <li>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.</li>
+                        <li>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.</li>
+                        <li>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.</li>
+                        <li>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li> 
+                        <li>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
+                        <li>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.</li>
+                        <li>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.</li>
+                        <li>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.</li>
+                    </ul>
+                </li>
+                
+                <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
+            </ul> 
+            
+        <p>The Constraint Validation API also makes the following methods available on the above elements and the form element.</p>
+            <ul>
+                <li>checkValidity(): Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
+                <li>reportValidity(): Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
+                <li>setCustomValidity(message): Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code to establish a validation failure other than those offered by the standard HTML5 validation constraints. The message is shown to the user when reporting the problem.</li>
+            </ul>
+        <p>Implementing a customized error message example:</p>
+        <a href="Built-in Form JavaScript/constraintValidationAPI.html">The constraint validation API</a>
+
+        <br>
+    
+        <h4>Validating forms without a built-in API</h4>
+        <p>In some cases, such as legacy browser support or custom controls, you won't be able to or won't want to use the Constraint Validation API.You're still able to use JavaScript to validate your form, but you'll just have to write your own.</p>
+
+        <p>To validate a form, ask yourself a few questions:</p>
+            
+            <p>-What kind of validation should I perform? <br>
+                You need to determine how to validate your data: string operations, type conversion, regular expressions, and so on. It's up to you.
+            </p>
+                    
+            <p>-What should I do if the form doesn't validate? <br>
+            This is clearly a UI matter. You have to decide how the form will behave. Does the form send the data anyway? Should you highlight the fields that are in error? Should you display error messages?
+            </p>
+                    
+            <p>-How can I help the user to correct invalid data? <br>
+            In order to reduce the user's frustration, it's very important to provide as much helpful information as possible in order to guide them in correcting their inputs. You should offer up-front suggestions so they know what's expected, as well as clear error messages.
+            </p>
+        <p>An example that doesn't use the constraint validation API:</p>
+        <a href="Built-in Form JavaScript/validationWhithoutAPI.html">The constraint validation API</a>
+        
+    </body>
+</html>
