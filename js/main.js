@@ -42,7 +42,7 @@ const links = [
     },
     {
       label: "Week11 Team Activity",
-      url: "week11/week11.html"
+      url: "week11/client/week11.html"
     }
 
 
