@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+
+body{
+    background-color: #8CB369;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 15px solid #5B8E7D;
+    padding: 50px;
+    margin: 20px;
+}
+
+h1{
+    color: #BC4B51;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h2{
+    color:#358f80;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+a:hover{
+    color: #F4A259;
+}
+a{
+    text-decoration: none;
+    color: #F4E285;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ol li{
+    list-style-type: none;
+    padding: 5px;
+  }

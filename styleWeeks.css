@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+body{
+    background-color: #F4E285;
+    font-family: 'Montserrat', sans-serif;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    border: 15px solid #5B8E7D;
+    flex-direction: wrap;
+   
+}
+
+.item{
+    border-style: dotted;
+    margin: 20px;
+    width: 80%;
+    padding: 10px;
+
+}
+
+h1{
+    color: #BC4B51;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+
+h2,h3{
+    color:#358f80;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+a:hover{
+    color: #8CB369;
+}
+a{
+    text-decoration: none;
+    color: #426a5a;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+}
