@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Stoke:wght@300&display=swap');
-
-body{
+*{
   font-family: 'Stoke', serif;
+}
+body{
+  
   background-color: #e9c46a;
   height: 100PX;
   display: flex;
