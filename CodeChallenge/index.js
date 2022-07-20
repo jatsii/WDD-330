@@ -33,24 +33,30 @@ const setWeatherData = data => {
 
 }
 
+// Remove the loader and the previous weather button 
+// Show the current weather as well the reload button
 const cleanUp= () =>{
     let container = document.getElementById('container');
     let loader = document.getElementById('loader');
+    let reload = document.getElementById('reload');
     let prev = document.getElementById('prev');
     let show = document.getElementById('show');
 
     prev.style.display = 'none';
     show.style.display = 'none';
+    reload.style.display = 'block';
     loader.style.display = 'none';
     container.style.display = 'flex';
 }
 
-//Get date
+//Get current date
 const getDate = () => {
     let date = new Date();
     return `${date.getDate()}-${('0' + (date.getMonth() + 1)).slice (- 2)}-${date.getFullYear()}`;
 
 }
+
+// Get current time
 const getTime =()=>{
     var hoy = new Date();
     var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
@@ -62,6 +68,7 @@ const onload = () => {
     navigator.geolocation.getCurrentPosition(fetchData);
 }
 
+//reload page
 function refreshPage(){
     window.location.reload();
 } 
